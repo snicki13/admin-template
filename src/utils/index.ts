@@ -28,9 +28,9 @@ export function randomString(length: number) {
 }
 
 /**
- * 中划线字符驼峰
- * @param {*} str 要转换的字符串
- * @returns 返回值
+ * Mid -drawing line character hump
+ * @param {*} str String to be converted
+ * @returns return value
  */
 export function toHump(str: string): string {
   if (!str) return str

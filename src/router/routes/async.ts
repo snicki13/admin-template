@@ -16,7 +16,7 @@ export const asyncRoutes = [
         name: 'Home',
         component: () => import('@/views/index/main.vue'),
         meta: {
-          title: '主控台',
+          title: 'Main console',
           affix: true,
           cacheable: true,
           iconPrefix: 'iconfont',
@@ -28,7 +28,7 @@ export const asyncRoutes = [
         name: 'WorkPlace',
         component: () => import('@/views/index/work-place.vue'),
         meta: {
-          title: '工作台',
+          title: 'Workbench',
           affix: true,
           iconPrefix: 'iconfont',
           icon: 'menu',

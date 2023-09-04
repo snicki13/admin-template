@@ -5,27 +5,27 @@
         <AddIcon />
       </n-icon>
     </template>
-    添加
+    Add to
   </n-button>
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue'
-  import { Add as AddIcon } from '@vicons/ionicons5'
+import { defineComponent } from 'vue'
+import { Add as AddIcon } from '@vicons/ionicons5'
 
-  export default defineComponent({
-    name: 'AddButton',
-    components: {
-      AddIcon,
-    },
-    emits: ['add'],
-    setup(props, { emit }) {
-      function onAdd() {
-        emit('add')
-      }
-      return {
-        onAdd,
-      }
-    },
-  })
+export default defineComponent({
+  name: 'AddButton',
+  components: {
+    AddIcon,
+  },
+  emits: ['add'],
+  setup(props, { emit }) {
+    function onAdd() {
+      emit('add')
+    }
+    return {
+      onAdd,
+    }
+  },
+})
 </script>

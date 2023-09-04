@@ -32,8 +32,8 @@ const usePermissionStore = defineStore('permission-route', {
         if (getMenuListByRoleId) {
           const res = await post({
             url: baseAddress + getMenuListByRoleId,
-            // 在实际的开发中，这个地方可以换成 token，让后端解析用户信息获取 userId 和 roleId，前端可以不用传 userId 和 roleId。
-            // 这样可以增加安全性
+            // In actual development, this place can be replaced with token to allow the back end to analyze user information to obtain Userid and ROLEID. The front -end can pass Userid and ROLEID.
+            // This can increase security
             data,
           })
           return generatorRoutes(res.data)
@@ -42,7 +42,7 @@ const usePermissionStore = defineStore('permission-route', {
         }
       } catch (error) {
         console.log(
-          '路由加载失败了，请清空一下Cookie和localStorage，重新登录；如果已经采用真实接口的，请确保菜单接口地址真实可用并且返回的数据格式和mock中的一样'
+          'The routing loading fails, please clear the cookie and localStorage, and log in again; if the real interface has been adopted, please make sure the menu interface address is true available and returned.'
         )
         return []
       }

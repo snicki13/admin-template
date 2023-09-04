@@ -9,8 +9,8 @@ Mock.mock(RegExp(login), 'post', function (options) {
   const data = {}
   if (username === 'admin') {
     baseData.code = 200
-    baseData.msg = '登录成功'
-    data.nickName = '超级管理员'
+    baseData.msg = 'login successful'
+    data.nickName = 'Super administrator'
     data.userName = 'admin'
     data.userId = 1
     data.roleId = 1
@@ -19,14 +19,14 @@ Mock.mock(RegExp(login), 'post', function (options) {
       {
         roleCode: 'ROLE_admin',
         roleId: 1,
-        roleName: '超级管理员',
+        roleName: 'Super administrator',
       },
     ]
     baseData.data = data
   } else if (username === 'editor') {
     baseData.code = 200
-    baseData.msg = '登录成功'
-    data.nickName = '编辑员'
+    baseData.msg = 'login successful'
+    data.nickName = 'editor'
     data.userName = 'editor'
     data.userId = 2
     data.roleId = 2
@@ -35,14 +35,14 @@ Mock.mock(RegExp(login), 'post', function (options) {
       {
         roleCode: 'ROLE_editor',
         roleId: 2,
-        roleName: '网站编辑人员',
+        roleName: 'Website editor',
       },
     ]
     baseData.data = data
   } else {
     baseData.code = 500
     baseData.data = ''
-    baseData.msg = '用户名或密码错误'
+    baseData.msg = 'wrong user name or password'
   }
   return Mock.mock(baseData)
 })
@@ -50,7 +50,7 @@ Mock.mock(RegExp(login), 'post', function (options) {
 Mock.mock(RegExp(getAllMenuByRoleId), 'post', function (options) {
   const roleId = JSON.parse(options.body).roleId || ''
   if (!roleId) {
-    return Mock.mock({ code: 500, data: '', msg: '获取菜单列表失败' })
+    return Mock.mock({ code: 500, data: '', msg: 'Get the menu list failed' })
   }
   const allRoutes = [...adminRoutes]
   allRoutes.forEach((it) => {
@@ -59,13 +59,13 @@ Mock.mock(RegExp(getAllMenuByRoleId), 'post', function (options) {
       child.isSelect = parseInt(roleId) === 1 || child.menuUrl.indexOf('authority') === -1
     })
   })
-  return Mock.mock({ code: 200, data: allRoutes, msg: '获取菜单列表成功' })
+  return Mock.mock({ code: 200, data: allRoutes, msg: 'Get the menu list success' })
 })
 
 Mock.mock(RegExp(getMenuListByRoleId), 'post', function (options) {
   const roleId = JSON.parse(options.body).roleId || ''
   if (!roleId) {
-    return Mock.mock({ code: 500, data: '', msg: '获取菜单列表失败' })
+    return Mock.mock({ code: 500, data: '', msg: 'Get the menu list failed' })
   }
   if (parseInt(roleId) === 1) {
     // 超级管理员
