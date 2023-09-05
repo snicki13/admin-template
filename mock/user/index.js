@@ -69,23 +69,23 @@ Mock.mock(RegExp(getMenuListByRoleId), 'post', function (options) {
   }
   if (parseInt(roleId) === 1) {
     // 超级管理员
-    return Mock.mock({ code: 200, data: adminRoutes, msg: '获取菜单列表成功' })
+    return Mock.mock({ code: 200, data: adminRoutes, msg: 'Get the menu list success' })
   } else if (parseInt(roleId) === 2) {
     // 编辑
     return Mock.mock({
       code: 200,
       data: editorRoutes,
-      msg: '获取菜单列表成功',
+      msg: 'Get the menu list success',
     })
   } else {
     return Mock.mock({
       code: 500,
       data: '',
-      msg: '目前仅支持超级管理员和编辑人员菜单',
+      msg: 'Currently only supports super administrators and editor menu menus',
     })
   }
 })
 
 Mock.mock(RegExp(updateUserInfo), 'post', function () {
-  return Mock.mock({ ...baseData, msg: '更新信息成功' })
+  return Mock.mock({ ...baseData, msg: 'Update information success' })
 })

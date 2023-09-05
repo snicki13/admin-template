@@ -431,7 +431,7 @@ export const editorRoutes = [
       },
       {
         parentPath: '/other',
-        menuUrl: 'http://www.baidu.com',
+        menuUrl: 'http://www.google.com',
         menuName: 'External chain',
       },
       {

@@ -24,7 +24,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
     data: [
       {
         id: 1,
-        name: '总裁办',
+        name: 'President office',
         parentId: '',
         depCode: 'dp_code_manager',
         'order|+1': 1,
@@ -33,7 +33,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
       },
       {
         id: 2,
-        name: '市场部',
+        name: 'Marketing department',
         parentId: '',
         depCode: 'dp_code_marketing',
         'order|+1': 1,
@@ -42,7 +42,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
         children: [
           {
             id: 3,
-            name: '市场一部',
+            name: 'Market',
             parentId: 2,
             depCode: 'dp_code_marketing_1',
             'order|+1': 1,
@@ -51,7 +51,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
           },
           {
             id: 4,
-            name: '市场二部',
+            name: 'Secondary market',
             parentId: 2,
             depCode: 'dp_code_marketing_2',
             'order|+1': 1,
@@ -62,7 +62,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
       },
       {
         id: 5,
-        name: '技术部',
+        name: 'Technical department',
         parentId: '',
         depCode: 'dp_code_technology',
         'order|+1': 1,
@@ -71,7 +71,7 @@ Mock.mock(RegExp(getDepartmentList), 'post', function () {
       },
       {
         id: 6,
-        name: '销售部',
+        name: 'Sales',
         parentId: '',
         depCode: 'dp_code_sale',
         'order|+1': 1,
@@ -88,16 +88,16 @@ Mock.mock(RegExp(getRoleList), 'post', function () {
     data: [
       {
         id: 1,
-        name: '超级管理员',
+        name: 'Super administrator',
         roleCode: 'ROLE_admin',
-        description: '超级管理员',
+        description: 'Super administrator',
         createTime: Random.now('yyyy-MM-dd HH:mm:ss'),
       },
       {
         id: 2,
-        name: '编辑员',
+        name: 'editor',
         roleCode: 'ROLE_editor',
-        description: '编辑员',
+        description: 'editor',
         createTime: Random.now('yyyy-MM-dd HH:mm:ss'),
       },
     ],
