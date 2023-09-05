@@ -6,6 +6,7 @@ import {
   SideTheme,
   ThemeMode,
 } from '@/store/types'
+import { dateDeDE, deDE } from 'naive-ui'
 
 export const projectName = 'Admin Work'
 
@@ -19,6 +20,8 @@ export default {
   pageAnim: PageAnim.OPACITY,
   isFixedNavBar: true,
   isCollapse: false,
+  locale: deDE,
+  dateLocale: dateDeDE,
   actionBar: {
     isShowSearch: true,
     isShowMessage: true,

@@ -1,6 +1,6 @@
 <template>
-  <n-config-provider :theme-overrides="themeOverrides" :theme="theme" :locale="deDE" style="height: 100%">
-    <n-global-style />
+  <n-config-provider :theme-overrides="themeOverrides" :theme="theme" :locale="appConfig.locale"
+    :date-locale="appConfig.dateLocale" style="height: 100%"> <n-global-style />
     <n-loading-bar-provider>
       <n-dialog-provider>
         <n-el class="vaw-layout-container" :class="[appConfig.deviceType === 'mobile' && 'is-mobile']">
@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import useAppConfigStore from '@/store/modules/app-config'
-import { darkTheme, deDE } from 'naive-ui'
+import { darkTheme } from 'naive-ui'
 import { computed, defineComponent, onBeforeUnmount, onMounted } from 'vue'
 import { DeviceType, ThemeMode } from '@/store/types'
 import useAxios from '@/hooks/useAxios'
@@ -84,7 +84,6 @@ export default defineComponent({
       theme,
       themeOverrides,
       layoutMode,
-      deDE,
       closeMenu,
     }
   },
