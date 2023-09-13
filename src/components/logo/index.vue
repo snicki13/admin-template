@@ -15,6 +15,7 @@
   import { defineComponent } from 'vue'
   import { projectName } from '../../setting'
   export default defineComponent({
+    // eslint-disable-next-line vue/multi-word-component-names
     name: 'Logo',
     props: {
       showTitle: {

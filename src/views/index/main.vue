@@ -32,7 +32,13 @@
         <FullYearSalesChart ref="fullYearSalesChart" />
       </n-grid-item>
     </n-grid>
-    <n-grid responsive="screen" cols="1 s:2 m:4 l:4 xl:4 2xl:4" x-gap="5" y-gap="5" class="mt-2 mb-2">
+    <n-grid
+      responsive="screen"
+      cols="1 s:2 m:4 l:4 xl:4 2xl:4"
+      x-gap="5"
+      y-gap="5"
+      class="mt-2 mb-2"
+    >
       <n-grid-item>
         <SalesChart ref="salesChart" />
       </n-grid-item>
@@ -50,127 +56,127 @@
 </template>
 
 <script lang="ts">
-import DataItem from './components/DataItem.vue'
-import OrderChart from './components/chart/OrderChart.vue'
-import SalesChart from './components/chart/SalesChart.vue'
-import StudentChart from './components/chart/StudentChart.vue'
-import EnrollmentChannelsChart from './components/chart/EnrollmentChannelsChart.vue'
-import FullYearSalesChart from './components/chart/FullYearSalesChart.vue'
-import DepartmentChart from './components/chart/DepartmentChart.vue'
-import { computed, defineComponent, ref, watch } from 'vue'
-import useAppConfigStore from '@/store/modules/app-config'
-export default defineComponent({
-  name: 'Home',
-  components: {
-    DataItem,
-    OrderChart,
-    SalesChart,
-    StudentChart,
-    EnrollmentChannelsChart,
-    FullYearSalesChart,
-    DepartmentChart,
-  },
-  setup() {
-    const appConfigStore = useAppConfigStore()
-    const mOrderChart = ref<InstanceType<typeof OrderChart>>()
-    const salesChart = ref<InstanceType<typeof SalesChart>>()
-    const enrollmentChannelsChart = ref<InstanceType<typeof EnrollmentChannelsChart>>()
-    const studentChart = ref<InstanceType<typeof StudentChart>>()
-    const fullYearSalesChart = ref<InstanceType<typeof FullYearSalesChart>>()
-    const departmentChart = ref<InstanceType<typeof DepartmentChart>>()
-    const onResize = () => {
-      setTimeout(() => {
-        mOrderChart.value?.updateChart()
-        salesChart.value?.updateChart()
-        enrollmentChannelsChart.value?.updateChart()
-        studentChart.value?.updateChart()
-        fullYearSalesChart.value?.updateChart()
-        departmentChart.value?.updateChart()
-      }, 500)
-    }
-    const collapse = computed(() => {
-      return appConfigStore.isCollapse
-    })
-    watch(collapse, () => {
-      onResize()
-    })
-    return {
-      collapse,
-      mOrderChart,
-      salesChart,
-      enrollmentChannelsChart,
-      studentChart,
-      departmentChart,
-      fullYearSalesChart,
-      dataList: [
-        {
-          title: 'Volume today',
-          data: '+1000',
-          bottomTitle: 'Total visits',
-          totalSum: '1000000+',
-          iconClass: 'data-chart',
-          extra: {
-            data: 1000,
-            data1: 2350,
+  import DataItem from './components/DataItem.vue'
+  import OrderChart from './components/chart/OrderChart.vue'
+  import SalesChart from './components/chart/SalesChart.vue'
+  import StudentChart from './components/chart/StudentChart.vue'
+  import EnrollmentChannelsChart from './components/chart/EnrollmentChannelsChart.vue'
+  import FullYearSalesChart from './components/chart/FullYearSalesChart.vue'
+  import DepartmentChart from './components/chart/DepartmentChart.vue'
+  import { computed, defineComponent, ref, watch } from 'vue'
+  import useAppConfigStore from '@/store/modules/app-config'
+  export default defineComponent({
+    name: 'Home',
+    components: {
+      DataItem,
+      OrderChart,
+      SalesChart,
+      StudentChart,
+      EnrollmentChannelsChart,
+      FullYearSalesChart,
+      DepartmentChart,
+    },
+    setup() {
+      const appConfigStore = useAppConfigStore()
+      const mOrderChart = ref<InstanceType<typeof OrderChart>>()
+      const salesChart = ref<InstanceType<typeof SalesChart>>()
+      const enrollmentChannelsChart = ref<InstanceType<typeof EnrollmentChannelsChart>>()
+      const studentChart = ref<InstanceType<typeof StudentChart>>()
+      const fullYearSalesChart = ref<InstanceType<typeof FullYearSalesChart>>()
+      const departmentChart = ref<InstanceType<typeof DepartmentChart>>()
+      const onResize = () => {
+        setTimeout(() => {
+          mOrderChart.value?.updateChart()
+          salesChart.value?.updateChart()
+          enrollmentChannelsChart.value?.updateChart()
+          studentChart.value?.updateChart()
+          fullYearSalesChart.value?.updateChart()
+          departmentChart.value?.updateChart()
+        }, 500)
+      }
+      const collapse = computed(() => {
+        return appConfigStore.isCollapse
+      })
+      watch(collapse, () => {
+        onResize()
+      })
+      return {
+        collapse,
+        mOrderChart,
+        salesChart,
+        enrollmentChannelsChart,
+        studentChart,
+        departmentChart,
+        fullYearSalesChart,
+        dataList: [
+          {
+            title: 'Volume today',
+            data: '+1000',
+            bottomTitle: 'Total visits',
+            totalSum: '1000000+',
+            iconClass: 'data-chart',
+            extra: {
+              data: 1000,
+              data1: 2350,
+            },
           },
-        },
-        {
-          title: 'New users',
-          data: '+500',
-          bottomTitle: 'Total user quantity',
-          totalSum: '2 million+',
-          iconClass: 'data-people',
-          extra: {
-            data: 700,
-            data1: 968,
+          {
+            title: 'New users',
+            data: '+500',
+            bottomTitle: 'Total user quantity',
+            totalSum: '2 million+',
+            iconClass: 'data-people',
+            extra: {
+              data: 700,
+              data1: 968,
+            },
           },
-        },
-        {
-          title: 'Monthly sales',
-          data: '￥50000',
-          bottomTitle: 'Cumulative sales',
-          totalSum: '2000€+',
-          iconClass: 'data-money',
-          extra: {
-            data: 80,
+          {
+            title: 'Monthly sales',
+            data: '￥50000',
+            bottomTitle: 'Cumulative sales',
+            totalSum: '2000€+',
+            iconClass: 'data-money',
+            extra: {
+              data: 80,
+            },
           },
-        },
-        {
-          title: 'Order volume of the month',
-          data: '189 pens',
-          bottomTitle: 'Cumulative order quantity',
-          totalSum: '10000+',
-          iconClass: 'data-order',
-          extra: {
-            data: 80,
+          {
+            title: 'Order volume of the month',
+            data: '189 pens',
+            bottomTitle: 'Cumulative order quantity',
+            totalSum: '10000+',
+            iconClass: 'data-order',
+            extra: {
+              data: 80,
+            },
           },
-        },
-      ],
-    }
-  },
-})
+        ],
+      }
+    },
+  })
 </script>
 
 <style lang="scss" scoped>
-@media screen and (max-width: 992px) {
-  .item-wrapper {
-    margin-bottom: 5px;
+  @media screen and (max-width: 992px) {
+    .item-wrapper {
+      margin-bottom: 5px;
+    }
+
+    .map-margin-tb {
+      margin: 5px 0;
+    }
   }
 
-  .map-margin-tb {
-    margin: 5px 0;
+  .light {
+    .chart-item {
+      background-color: #fff;
+    }
   }
-}
 
-.light {
-  .chart-item {
-    background-color: #fff;
+  .stack-avatar-wrapper {
+    position: absolute;
+    right: -2%;
+    top: 10%;
   }
-}
-
-.stack-avatar-wrapper {
-  position: absolute;
-  right: -2%;
-  top: 10%;
-}
 </style>

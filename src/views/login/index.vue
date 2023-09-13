@@ -100,7 +100,9 @@
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
-      animation: grow 4s steps(35) 1.5s normal both, blink 1s steps(35) infinite normal;
+      animation:
+        grow 4s steps(35) 1.5s normal both,
+        blink 1s steps(35) infinite normal;
       .the {
         font-size: 14px;
       }

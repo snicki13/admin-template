@@ -25,7 +25,7 @@ function getComponentName(key: string) {
 }
 
 export function registerComponents(app: App) {
-  const components = import.meta.glob('./**/**.{vue,tsx}', {eager: true})
+  const components = import.meta.glob('./**/**.{vue,tsx}', { eager: true })
   Object.keys(components).forEach((it: string) => {
     const component: any = components[it]
     app.component(component.default.name || toHump(getComponentName(it)), component.default)

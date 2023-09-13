@@ -118,7 +118,7 @@ export const useTableColumn = function (columns: DataTableColumn[], options?: Da
 
 export const useTableIndexColumn = function () {
   return {
-    title: '序号',
+    title: 'Id',
     key: 'index',
     width: 80,
     render: (rowData: any, rowIndex: number) => {

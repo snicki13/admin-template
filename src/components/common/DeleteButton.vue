@@ -10,22 +10,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Trash as TrashIcon } from '@vicons/ionicons5'
+  import { defineComponent } from 'vue'
+  import { Trash as TrashIcon } from '@vicons/ionicons5'
 
-export default defineComponent({
-  name: 'DeleteButton',
-  components: {
-    TrashIcon,
-  },
-  emits: ['delete'],
-  setup(props, { emit }) {
-    function onDelete() {
-      emit('delete')
-    }
-    return {
-      onDelete,
-    }
-  },
-})
+  export default defineComponent({
+    name: 'DeleteButton',
+    components: {
+      TrashIcon,
+    },
+    emits: ['delete'],
+    setup(props, { emit }) {
+      function onDelete() {
+        emit('delete')
+      }
+      return {
+        onDelete,
+      }
+    },
+  })
 </script>

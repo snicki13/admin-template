@@ -4,7 +4,7 @@
       <template #header>
         <TableHeader
           :show-filter="true"
-          title="查询条件"
+          title="Query conditions"
           @search="onSearch"
           @reset-search="onResetSearch"
         >
@@ -61,7 +61,7 @@
   const conditionItems: Array<FormItem> = [
     {
       key: 'name',
-      label: '用户姓名',
+      label: 'username',
       value: ref(null),
       render: (formItem) => {
         return h(NInput, {
@@ -69,13 +69,13 @@
           onUpdateValue: (val) => {
             formItem.value.value = val
           },
-          placeholder: '请输入姓名',
+          placeholder: 'Please type in your name',
         })
       },
     },
     {
       key: 'sex',
-      label: '用户姓别',
+      label: 'The users surname is',
       value: ref(null),
       optionItems: [
         {
@@ -91,7 +91,7 @@
         return h(NSelect, {
           options: formItem.optionItems as Array<SelectOption>,
           value: formItem.value.value,
-          placeholder: '请选择用户姓别',
+          placeholder: 'Please choose the users last name',
           onUpdateValue: (val) => {
             formItem.value.value = val
           },
@@ -100,12 +100,12 @@
     },
     {
       key: 'date',
-      label: '日期',
+      label: 'date',
       value: ref(null),
       render: (formItem) => {
         return h(NDatePicker, {
           value: formItem.value.value,
-          placeholder: '请选择日期',
+          placeholder: 'Please select the date',
           style: 'width: 100%',
           onUpdateValue: (val) => {
             formItem.value.value = val
@@ -116,13 +116,13 @@
     },
     {
       key: 'time',
-      label: '时间',
+      label: 'time',
       value: ref(null),
       render: (formItem) => {
         return h(NTimePicker, {
           options: formItem.optionItems as Array<SelectOption>,
           value: formItem.value.value,
-          placeholder: '请选择时间',
+          placeholder: 'Please choose time',
           style: 'width: 100%',
           onUpdateValue: (val) => {
             formItem.value.value = val
@@ -136,11 +136,11 @@
       value: ref(null),
       optionItems: [
         {
-          label: '选项1',
+          label: 'Option 1',
           value: 0,
         },
         {
-          label: '选项2',
+          label: 'Option 2',
           value: 1,
         },
       ],
@@ -150,7 +150,7 @@
           {
             options: formItem.optionItems as Array<SelectOption>,
             value: formItem.value.value,
-            placeholder: '请选择用户姓别',
+            placeholder: 'Please choose the users last name',
             onUpdateValue: (val) => {
               formItem.value.value = val
             },
@@ -194,11 +194,11 @@
           table.selectionColumn,
           table.indexColumn,
           {
-            title: '名称',
+            title: 'name',
             key: 'nickName',
           },
           {
-            title: '性别',
+            title: 'gender',
             key: 'gender',
             width: 80,
             render: (rowData) => {
@@ -206,7 +206,7 @@
             },
           },
           {
-            title: '头像',
+            title: 'avatar',
             key: 'avatar',
             render: (rowData: any) => {
               return h(
@@ -220,27 +220,27 @@
             },
           },
           {
-            title: '地址',
+            title: 'address',
             key: 'address',
           },
           {
-            title: '名称',
+            title: 'name',
             key: 'nickName',
           },
           {
-            title: '上次登录时间',
+            title: 'Last Login Time',
             key: 'lastLoginTime',
             width: 180,
           },
           {
-            title: '上次登录IP',
+            title: 'Last login IP',
             key: 'lastLoginIp',
           },
           {
-            title: '状态',
+            title: 'state',
             key: 'status',
             render: (rowData) =>
-              renderTag(!!rowData.status ? '正常' : '禁用', {
+              renderTag(!!rowData.status ? 'Ok' : 'Error', {
                 type: !!rowData.status ? 'success' : 'error',
                 size: 'small',
               }),
@@ -299,14 +299,17 @@
     height: 30px;
     margin: 0 auto;
     vertical-align: middle;
+
     .avatar {
       width: 100%;
       height: 100%;
       border-radius: 50%;
     }
+
     .avatar-vip {
       border: 2px solid #cece1e;
     }
+
     .vip {
       position: absolute;
       top: 0;
@@ -315,6 +318,7 @@
       transform: rotate(60deg);
     }
   }
+
   .gender-container {
     .gender-icon {
       width: 20px;

@@ -6,6 +6,7 @@ import { useAppRouter } from './router'
 import useRouterGuard from './router/guard'
 import useAppPinia from './store'
 import useMock from '../mock'
+import { createI18n } from 'vue-i18n'
 
 function vawBoot() {
   const app = createApp(App)
@@ -14,6 +15,11 @@ function vawBoot() {
   useGlobalComponents(app)
   useRouterGuard()
   useMock()
+  app.use(
+    createI18n({
+      legacy: false,
+    })
+  )
   app.mount('#app')
 }
 

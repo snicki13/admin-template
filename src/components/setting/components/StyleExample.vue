@@ -47,7 +47,9 @@
     margin: 0 auto;
     border-radius: $border-radius;
     background-color: transparent;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.12),
+      0 0 6px rgba(0, 0, 0, 0.04);
     .left {
       border-top-left-radius: $border-radius;
       border-bottom-left-radius: $border-radius;

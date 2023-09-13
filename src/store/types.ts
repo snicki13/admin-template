@@ -54,8 +54,8 @@ export interface AppConfigState {
   pageAnim: PageAnim
   isFixedNavBar: boolean
   isCollapse: boolean
-  locale: NLocale,
-  dateLocale: NDateLocale,
+  locale: NLocale
+  dateLocale: NDateLocale
   actionBar: {
     isShowSearch: boolean
     isShowMessage: boolean
